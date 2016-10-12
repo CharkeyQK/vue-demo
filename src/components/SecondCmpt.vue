@@ -24,7 +24,7 @@
         </el-tag>
       </el-table-column>
       <el-table-column inline-template label="电影评分" width="380">
-        <div style="height: 50px;line-height: 50px;vertical-align: middle;">
+        <div style="line-height: initial;">
           <el-rate v-model="row.rating.average" disabled show-text text-color="#ff9900"
                    v-bind:text-template="row.rating.average+''" v-bind:max="row.rating.max"></el-rate>
         </div>
