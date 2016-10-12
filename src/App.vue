@@ -33,7 +33,7 @@ export default {
 
 <style>
 html {
-  height: 100%;
+  /*height: 100%;*/
 }
 
 body {
@@ -46,7 +46,7 @@ body {
 #app {
   color: #2c3e50;
   margin-top: -100px;
-  max-width: 600px;
+  max-width: 1366px;
   font-family: Source Sans Pro, Helvetica, sans-serif;
   text-align: center;
 }
