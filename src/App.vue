@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <!-- Only one component inside template, or you will get error: template syntax error Component template should contain exactly one root element -->
     <img class="logo" src="./assets/logo.png">
     <hello></hello>
     <el-row :gutter="10">
@@ -10,15 +11,22 @@
     <el-row :gutter="20">
       <el-col :span="24"><div class="grid-content bg-purple"><el-button type="primary" icon="search">搜索</el-button></div></el-col>
     </el-row>
+    <ul>
+      <li><router-link to="/first">First Page</router-link></li>
+      <li><router-link to="/second">Second Page</router-link></li>
+    </ul>
+    <router-view class="view"></router-view>
   </div>
 </template>
 
 <script>
 import Hello from './components/Hello'
+import FirstCmpt from './components/FirstCmpt'
+import SecondCmpt from './components/SecondCmpt'
 
 export default {
   components: {
-    Hello
+    Hello, FirstCmpt, SecondCmpt
   }
 }
 </script>
