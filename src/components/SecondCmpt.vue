@@ -22,6 +22,7 @@
     },
     mounted: function() {
       // 钩子函数, see also 官方文档关于 vue 生命周期的解析 http://vuejs.org/guide/instance.html#Lifecycle-Diagram
+      // 如果接口是跨域的 POST 请求，则需要在服务器端配置: Access-Control-Allow-Origin: *
       this.$http.jsonp('https://api.douban.com/v2/movie/top250?count=10', {}, {
         headers: {
 
