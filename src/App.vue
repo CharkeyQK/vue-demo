@@ -14,6 +14,7 @@
     <ul>
       <li><router-link to="/first">First Page</router-link></li>
       <li><router-link to="/second">Second Page</router-link></li>
+      <li><router-link to="/third">Third Page</router-link></li>
     </ul>
     <router-view class="view"></router-view>
   </div>

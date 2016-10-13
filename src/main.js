@@ -13,8 +13,19 @@ Vue.use(ElementUI);
 Vue.use(VueRouter);
 Vue.use(VueResource);
 
-const First = { template: '<div><h2>我是第 1 个子页面</h2></div>' }
+// This my simple component
+Vue.component('todo-item', {
+  template: '<li>This is a todo item</li>'
+});
+// This is my component that accepts a 'prop', which is like a custom attribute.
+Vue.component('todo-item-v2', {
+  template: '<li>{{data.text}}</li>',
+  props:['data']
+});
+
+const First = { template: '<div><h2>我是第 1 个子页面</h2></div>' };
 import SecondCmpt from './components/SecondCmpt'
+import ThirdCmpt from './components/FirstCmpt'
 
 const router = new VueRouter({
   mode: 'history',
@@ -27,6 +38,11 @@ const router = new VueRouter({
     {
       path:'/second',
       component: SecondCmpt
+    }
+    ,
+    {
+      path:'/third',
+      component: ThirdCmpt
     }
   ]
 });
