@@ -17,6 +17,9 @@
       <li><router-link to="/third">Third Page</router-link></li>
     </ul>
     <router-view class="view"></router-view>
+    <div style="text-align: left;">
+      <ListOrderDemo></ListOrderDemo>
+    </div>
   </div>
 </template>
 
@@ -24,10 +27,11 @@
 import Hello from './components/Hello'
 import FirstCmpt from './components/FirstCmpt'
 import SecondCmpt from './components/SecondCmpt'
+import ListOrderDemo from './components/ListOrderDemo'
 
 export default {
   components: {
-    Hello, FirstCmpt, SecondCmpt
+    Hello, FirstCmpt, SecondCmpt,ListOrderDemo
   }
 }
 </script>
