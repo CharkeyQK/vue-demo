@@ -19,8 +19,8 @@
       <el-table-column property="subtype" label="子类型"></el-table-column>
       <el-table-column inline-template label="电影海报" width="100"><img v-bind:src="row.images.small"></el-table-column>
       <el-table-column inline-template label="Casts" width="300">
-        <el-tag v-for="(cast, index) in row.casts">
-          {{ cast.name }}
+        <el-tag v-for="(cast, index) in row.casts" :key="cast.id">
+          {{index}}{{cast.name}}{{cast.id}}
         </el-tag>
       </el-table-column>
       <el-table-column inline-template label="电影评分" width="380">
