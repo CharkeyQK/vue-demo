@@ -19,8 +19,12 @@
       <el-table-column property="subtype" label="子类型"></el-table-column>
       <el-table-column inline-template label="电影海报" width="100"><img v-bind:src="row.images.small"></el-table-column>
       <el-table-column inline-template label="Casts" width="300">
-        <el-tag v-for="(cast, index) in row.casts" :key="cast.id">
-          {{index}}{{cast.name}}{{cast.id}}
+        <!--<el-tag v-for="(cast, index) in row.casts" :key="cast.id">-->
+        <!--{{index}}{{cast.name}}{{cast.id}}-{{row.id}}-->
+        <!--</el-tag>-->
+        <el-tag v-for="(cast, index) in row.casts" :key="cast.id" :closable="true" :close-transition="false"
+                @close="handleClose(row, cast)">
+          {{cast.name}}
         </el-tag>
       </el-table-column>
       <el-table-column inline-template label="电影评分" width="380">
@@ -39,35 +43,46 @@
       return {
         author: "微信公众号",
         title: "",
-        articles: []
+        articles: [],
+        casts: []
       }
     },
     methods: {
       imagesFormatter(row, column) {
         // row 为当前行，
-        return '<img src="'+row.images.small+'" alt="images">';
+        return '<img src="' + row.images.small + '" alt="images">';
+      },
+      handleClose(curRow, curCast) {
+        this.articles.forEach((article, articleIndex) => {
+          if (article.id === curRow.id) {
+            this.casts = article.casts;
+            article.casts.forEach((cast, castIndex) => {
+              if (cast.id === curCast.id) {
+                this.casts.splice(castIndex, 1);
+              }
+            });
+          }
+        });
       }
     },
-    mounted: function() {
+    mounted: function () {
       // 钩子函数, see also 官方文档关于 vue 生命周期的解析 http://vuejs.org/guide/instance.html#Lifecycle-Diagram
       // 如果接口是跨域的 POST 请求，则需要在服务器端配置: Access-Control-Allow-Origin: *
       this.$http.jsonp('https://api.douban.com/v2/movie/top250?count=10', {}, {
-        headers: {
-
-        },
+        headers: {},
         emulateJSON: true
-      }).then(function(response) {
+      }).then(function (response) {
         // 这里是处理正确的回调
 
         this.articles = response.data.subjects;
         this.articles.map(function (article) {
-          article.rating.average = article.rating.average/2;
-          article.rating.max = article.rating.max/2;
+          article.rating.average = article.rating.average / 2;
+          article.rating.max = article.rating.max / 2;
         });
         this.title = response.data.title;
-//         this.articles = response.data["subjects"] 也可以
+        //         this.articles = response.data["subjects"] 也可以
 
-      }, function(response) {
+      }, function (response) {
         // 这里是处理错误的回调
         console.log(response)
       });
