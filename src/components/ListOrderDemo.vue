@@ -382,7 +382,7 @@
     componentName: 'MyOrderList',
     props: {
       data: {
-        type: String,
+        type: Object,
         required: true
       }
     },
