@@ -26,6 +26,8 @@ Vue.component('todo-item-v2', {
 const First = { template: '<div><h2>我是第 1 个子页面</h2></div>' };
 import SecondCmpt from './components/SecondCmpt'
 import ThirdCmpt from './components/FirstCmpt'
+import AddCategory from './components/AddCategory'
+import ComponentDemo from './components/ComponentDemo'
 
 const router = new VueRouter({
   mode: 'history',
@@ -43,6 +45,16 @@ const router = new VueRouter({
     {
       path:'/third',
       component: ThirdCmpt
+    }
+    ,
+    {
+      path:'/addCategory',
+      component: AddCategory
+    }
+    ,
+    {
+      path:'/componentDemo',
+      component: ComponentDemo
     }
   ]
 });
