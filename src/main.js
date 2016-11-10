@@ -1,6 +1,7 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
+import Vuex from 'vuex'
 import App from './App'
 import ElementUI from 'element-ui'
 import VueRouter from "vue-router"
@@ -12,6 +13,7 @@ Vue.config.debug = true;
 Vue.use(ElementUI);
 Vue.use(VueRouter);
 Vue.use(VueResource);
+Vue.use(Vuex);
 
 // This my simple component
 Vue.component('todo-item', {
@@ -26,7 +28,7 @@ Vue.component('todo-item-v2', {
 const First = { template: '<div><h2>我是第 1 个子页面</h2></div>' };
 import SecondCmpt from './components/SecondCmpt'
 import ThirdCmpt from './components/FirstCmpt'
-import AddCategory from './components/AddCategory'
+import CategoryMain from './components/category/CategoryMain'
 import ComponentDemo from './components/ComponentDemo'
 
 const router = new VueRouter({
@@ -48,8 +50,8 @@ const router = new VueRouter({
     }
     ,
     {
-      path:'/addCategory',
-      component: AddCategory
+      path:'/categoryMain',
+      component: CategoryMain
     }
     ,
     {

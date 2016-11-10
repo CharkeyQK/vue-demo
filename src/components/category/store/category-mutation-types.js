@@ -1,0 +1,2 @@
+export const RECEIVE_OFFERINGS = 'RECEIVE_OFFERINGS';
+

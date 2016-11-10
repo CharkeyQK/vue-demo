@@ -45,7 +45,8 @@ body {
 #app {
   color: #2c3e50;
   margin-top: -100px;
-  max-width: 1366px;
+  max-width: 100%;
+  min-width: 100%;
   font-family: Source Sans Pro, Helvetica, sans-serif;
   text-align: center;
 }
