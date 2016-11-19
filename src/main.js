@@ -30,6 +30,8 @@ import SecondCmpt from './components/SecondCmpt'
 import ThirdCmpt from './components/FirstCmpt'
 import CategoryMain from './components/category/CategoryMain'
 import ComponentDemo from './components/ComponentDemo'
+import Price from './components/Price'
+import Tree from './components/Tree'
 
 const router = new VueRouter({
   mode: 'history',
@@ -57,6 +59,15 @@ const router = new VueRouter({
     {
       path:'/componentDemo',
       component: ComponentDemo
+    }
+    ,
+    {
+      path:'/price',
+      component: Price
+    },
+    {
+      path:'/tree',
+      component: Tree
     }
   ]
 });

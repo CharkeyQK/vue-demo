@@ -9,6 +9,8 @@
       <li><router-link to="/third">Third Page</router-link></li>
       <li><router-link to="/addCategory">AddCategory Page</router-link></li>
       <li><router-link to="/componentDemo">ComponentDemo Page</router-link></li>
+      <li><router-link to="/price">Price Page</router-link></li>
+      <li><router-link to="/tree">Tree Page</router-link></li>
     </ul>
     <router-view class="view"></router-view>
   </div>
