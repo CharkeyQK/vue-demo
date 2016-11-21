@@ -11,10 +11,10 @@
 
   export default {
     data() {
-        return{
-            price:189,
-          storePrice: 289
-        }
+      return {
+        price: 189,
+        storePrice: 289
+      }
     },
     components: {
       CurrencyInput

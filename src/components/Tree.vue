@@ -115,21 +115,29 @@
       },
 
       setCheckedNodes() {
-        this.$refs.tree.setCheckedNodes([{
-          "id": 31,
-          "label": "Level two 3-1"
-        },
-          {
-            "id": 32,
-            "label": "Level two 3-2"
-          }]);
+        this.$refs.tree.setCheckedNodes(
+          [
+            {
+              "id": 111,
+              "label": "Level two 1-1-1"
+            },
+            {
+              "id": 112,
+              "label": "Level two 1-1-2"
+            },
+            {
+              "id": 11,
+              "label": "Level two 1-1"
+            }
+          ]
+        );
       }
     },
 
     data() {
       return {
-        defaultCheckedKeys: [11, 12],
-        defaultExpandedKeys: [11],
+        defaultCheckedKeys: [],
+        defaultExpandedKeys: [],
         data: null,
         defaultProps: {
           key: 'id',
