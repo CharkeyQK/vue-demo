@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- see also https://github.com/ElemeFE/element/issues/1236; http://jsfiddle.net/8wo0sm4w/-->
     <el-tree lazy
              show-checkbox
              default-expand-all1
