@@ -32,6 +32,7 @@ import CategoryMain from './components/category/CategoryMain'
 import ComponentDemo from './components/ComponentDemo'
 import Price from './components/Price'
 import Tree from './components/Tree'
+import UIComponentDemo from './components/UIComponentDemo'
 
 const router = new VueRouter({
   mode: 'history',
@@ -68,6 +69,10 @@ const router = new VueRouter({
     {
       path:'/tree',
       component: Tree
+    },
+    {
+      path:'/uiComponentDemo',
+      component: UIComponentDemo
     }
   ]
 });
